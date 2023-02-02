@@ -30,6 +30,10 @@
                                 <img src="{{ asset($wellnessImage->image) }}" alt="">
                             </div>
                             @endforeach
+                            @else
+                            <div class="item">
+                                <img src="{{ asset('uploads/wellness/logo/'.$wellness->logo_image) }}" alt="">
+                            </div>
                             @endif
                         </div>
 

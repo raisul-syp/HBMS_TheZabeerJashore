@@ -482,7 +482,7 @@
             @if ($page->name == 'Wellness')
             <div class="row mt-4">
                 @forelse ($wellnesses as $wellness)
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-6 mb-4">
                     <div class="card wellness">
                         @if (!$wellness->logo_image == NULL)
                         <div class="page-image logo">

@@ -46,7 +46,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7">No Bookings History</td>
+                    <td colspan="8">No Bookings History</td>
                 </tr>
                 @endforelse
             </tbody>

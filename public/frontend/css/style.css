@@ -681,24 +681,20 @@ About Us Section Start
     line-height: 35px;
     font-weight: 800;
     border-radius: 0;
-    background: var(--siteColor1);
-    border: 1px solid var(--siteColor1);
+    background: var(--goldenBG2);
+    border: 1px solid transparent;
     text-transform: uppercase;
     font-size: 14px;
     transition: all 0.3s ease-in-out;
 }
 
 .about_section .about_section_inner .content_box .card .card-body .content .btn-read span {
-    background: var(--siteFont2);
-    background: var(--goldenBG2);
-    /* background-size: 400% 200%; */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--siteColor1);
     transition: all 0.3s ease-in-out;
 }
 
 .about_section .about_section_inner .content_box .card .card-body .content .btn-read svg {
-    color: #cd853f;
+    color: var(--siteColor1);
     margin-left: 5px;
     margin-bottom: 2px;
     font-size: 18px;
@@ -707,16 +703,17 @@ About Us Section Start
 
 .about_section .about_section_inner .content_box .card .card-body .content .btn-read:hover {
     background: transparent;
+    border: 1px solid var(--siteColor2);
 }
 
 .about_section .about_section_inner .content_box .card .card-body .content .btn-read:hover span {
-    background: var(--siteColor1);
+    background: var(--goldenBG2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .about_section .about_section_inner .content_box .card .card-body .content .btn-read:hover svg {
-    color: var(--siteColor1);
+    color: var(--siteColor2);
     margin-left: 10px;
 }
 
@@ -759,7 +756,7 @@ Rooms Section Start
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
     border: none;
     border-radius: 0;
-    background: var(--goldenBG2);
+    background: var(--siteColor1);
     /* background-size: 400% 200%; */
 }
 
@@ -780,7 +777,7 @@ Rooms Section Start
 }
 
 .rooms_section .rooms_section_inner .rooms_sec .card .card-body {
-    border-top: 5px solid var(--siteColor1);
+    border-top: 5px solid var(--siteColor2);
     padding: 15px 10px;
 }
 
@@ -793,7 +790,7 @@ Rooms Section Start
 }
 
 .rooms_section .rooms_section_inner .rooms_sec .card .card-body .content .content_inner h4 {
-    color: var(--siteColor1);
+    color: var(--siteColor2);
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 10px;
@@ -818,6 +815,7 @@ Rooms Section Start
     align-items: baseline;
     justify-content: center;
     gap: 3px;
+    color: var(--siteFont2);
 }
 .rooms_section .rooms_section_inner .rooms_sec .card .card-body .content .content_inner .room-price .actual-price h5 span {
     font-size: 10px;
@@ -895,18 +893,18 @@ Rooms Section Start
 
 .rooms_section .rooms_section_inner .rooms_sec .card .card-body .content .btn-view {
     position: relative;
-    color: var(--siteColor1);
+    color: var(--siteColor2);
     text-decoration: none;
     text-transform: capitalize;
     font-weight: 800;
     font-size: 12px;
-    border: 1px solid var(--siteColor1);
+    border: 1px solid var(--siteColor2);
     padding: 5px 15px;
     transition: all 0.3s;
 }
 
 .rooms_section .rooms_section_inner .rooms_sec .card .card-body .content .btn-view:hover {
-    color: var(--siteColor1);
+    color: var(--siteColor2);
 }
 
 .rooms_section .rooms_section_inner .rooms_sec .card .card-body .content .btn-view::before {
@@ -918,7 +916,7 @@ Rooms Section Start
     left: 1px;
     width: 0%;
     z-index: 1;
-    background: var(--siteColor1);
+    background: var(--siteColor2);
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
 }
@@ -990,10 +988,10 @@ Facilities Section Start
 
 .facility_section .facility_section_inner .facility_content .btn-book {
     height: 50px;
-    background: var(--goldenBG2);
+    background: var(--siteColor1);
     /* background-size: 400% 200%; */
     border: 1px solid transparent;
-    color: var(--siteFont2);
+    color: var(--siteColor2);
     text-transform: uppercase;
     font-weight: 700;
     border-radius: 0;
@@ -1298,12 +1296,13 @@ Core Facilities Section Start
 .coreFacility_section .coreFacility_section_inner .coreFacilities_sec .card .card-body .icon {
     width: 70px;
     height: 70px;
-    background: var(--siteColor1);
-    border: 1px solid var(--siteColor1);
-    border-radius: 50%;
+    background: var(--goldenBG2);
+    border: 1px solid transparent;
+    border-radius: 0;
     padding: 15px;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
     margin: 0 auto 20px;
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
 }
 
 .coreFacility_section .coreFacility_section_inner .coreFacilities_sec .card .card-body .icon img {
@@ -1485,7 +1484,7 @@ Footer Section Start
     border: 1px solid var(--siteFont3);
     width: 35px;
     height: 35px;
-    padding: 4px 8px;
+    padding: 2px 8px;
     background: transparent;
     transition: all 0.3s ease;
 }
@@ -1789,7 +1788,7 @@ Footer Section End
 }
 
 .navbar-light .navbar-nav .nav-item.booking-link .nav-link.btn-golden {
-    padding: 40px 15px !important;
+    padding: 35px 15px !important;
     font-size: 14px;
     color: var(--siteColor1) !important;
     font-weight: 900;
@@ -1908,6 +1907,7 @@ Footer Section End
     margin: 0 auto;
 }
 
+.pages_section_frontend .card.hall .page-image.logo,
 .pages_section_frontend .card.wellness .page-image.logo {
     width: 100%;
     height: auto;
@@ -2146,6 +2146,17 @@ Footer Section End
 }
 
 .page_details_section_frontend .page-details-inner {}
+
+.page_details_section_frontend .page-details-inner .page-details-carousel .item {
+    background-color: var(--siteColor1);
+}
+
+.page_details_section_frontend .page-details-inner .page-details-carousel .item .logo-bg {
+    background-color: var(--siteColor1);
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px;
+}
 
 .page_details_section_frontend .page-details-inner .card {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;

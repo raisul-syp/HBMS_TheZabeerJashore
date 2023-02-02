@@ -30,7 +30,12 @@
                                 <img src="{{ asset($hallImage->image) }}" alt="">
                             </div>
                             @endforeach
+                            @else
+                            <div class="item">
+                                <img src="{{ asset('uploads/halls/logo/'.$hall->logo_image) }}" alt="">
+                            </div>
                             @endif
+                            
                         </div>
 
                         <div class="card-body">

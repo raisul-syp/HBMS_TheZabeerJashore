@@ -16,8 +16,8 @@
                                 <h1>{{ $slider->content_2 }}</h1>
                                 <hr>
                                 <h4>{{ $slider->content_3 }}</h4>
-                                <a href="https://thezabeerdhaka.com/" class="btn btn-primary btn-read-more">The Zabeer Dhaka</a>
                                 <a href="https://thezabeerjashore.com/" class="btn btn-primary btn-read-more">The Zabeer Jashore</a>
+                                <a href="https://thezabeerdhaka.com/" class="btn btn-primary btn-read-more">The Zabeer Dhaka</a>
                             </div>
                         </div>
                     </div>
@@ -39,8 +39,8 @@
                                 <h1>{{ $slider->content_2 }}</h1>
                                 <hr>
                                 <h4>{{ $slider->content_3 }}</h4>
-                                <a href="https://thezabeerdhaka.com/" class="btn btn-primary btn-read-more">The Zabeer Dhaka</a>
                                 <a href="https://thezabeerjashore.com/" class="btn btn-primary btn-read-more">The Zabeer Jashore</a>
+                                <a href="https://thezabeerdhaka.com/" class="btn btn-primary btn-read-more">The Zabeer Dhaka</a>
                             </div>
                         </div>
                     </div>
@@ -321,6 +321,20 @@
         <div class="row">
             <div class="col-lg-6 p-0">
                 <div class="facility_image">
+                    <img src="{{ asset('frontend/images/wellness/meeting.png') }}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 p-0">
+                <div class="facility_content">
+                    <h4>Halls</h4>
+                    <p>The hotel has 3 dedicated halls for any kind of meeting and events. Each hall has the capacity for 200+ guests. Also has very well decoration and world-class service.</p>
+                    <a class="btn btn-primary btn-book" href="{{ url('/restaurants') }}">{{ _('View more') }}</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 p-0">
+                <div class="facility_image">
                     <img src="{{ asset('frontend/images/wellness/wellness.png') }}" alt="">
                 </div>
             </div>
@@ -355,7 +369,7 @@
     </div>
 </section>
 
-<section class="video-section-area" style="background-image: url(../frontend/images/vidoe-section-bg.jpeg);">
+<section class="video-section-area" style="background-image: url(../frontend/images/vidoe-section-bg.jpg);">
     <div class="play-btn-box" id="play-video">
       <div class="play-button"><i class="fas fa-play"></i></div>
       <div class="play-btn-line1" id="line1">

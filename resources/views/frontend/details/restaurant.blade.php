@@ -30,6 +30,12 @@
                                 <img src="{{ asset($restaurentImage->image) }}" alt="">
                             </div>
                             @endforeach
+                            @else
+                            <div class="item">
+                                <div class="logo-bg">
+                                    <img src="{{ asset('uploads/restaurents/logo/'.$restaurant->logo_image) }}" alt="">
+                                </div>
+                            </div>
                             @endif
                         </div>
 

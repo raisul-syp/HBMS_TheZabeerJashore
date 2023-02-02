@@ -70,8 +70,7 @@ $(document).ready(function () {
     $('#play-video').on('click', function(e){
         e.preventDefault();
         $('#video-overlay').addClass('open');
-        $("#video-overlay").append('<iframe width="750" height="400" src="https://www.youtube.com/embed/360SeBBnbHI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
-        // $("#video-overlay").append('<video width="750" height="400" controls><source src="frontend/video/the_zabeer_dhaka_promo.mp4" type="video/mp4"></video>');
+        $("#video-overlay").append('<iframe width="750" height="400" src="https://www.youtube.com/embed/w0Y90tjAq3g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
       });
       
       $('.video-overlay, .video-overlay-close').on('click', function(e){
