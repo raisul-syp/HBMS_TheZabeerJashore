@@ -63,7 +63,7 @@ class BookingController extends Controller
                 'payment_mode' => $booking->payment_mode,
             );
 
-            Mail::send(new BookingMailable($data));
+            // Mail::send(new BookingMailable($data));
             return redirect('booking/success')->with('success','Your booking has been completed successfully. We will contact with you very shortly.');
         }
         catch(\Exception $e) {
@@ -91,7 +91,7 @@ class BookingController extends Controller
                 ->where(function ($query) use ($checkin_date) {
                     $query->where('checkin_date', '<=', $checkin_date)
                         ->where('checkout_date', '>=', $checkin_date);
-                })->count();
+                })->where('booking_status', 1)->count();
 
             $available_quantity = $room->quantity - $booked_rooms;
             if ($available_quantity > 0) {

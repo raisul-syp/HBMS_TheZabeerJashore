@@ -2,7 +2,7 @@
     @if (!empty($settings->logo))
     <img class="logo-abbr" src="{{ asset('uploads/site/'.$settings->logo) }}" alt="">
     @else
-    <img class="logo-abbr" src="{{ asset('uploads/site/logo-the-zabeer-dhaka.png') }}" alt="">
+    <img class="logo-abbr" src="{{ asset('uploads/site/logo-the-zabeer-jashore.png') }}" alt="">
     @endif
 </a>
 

@@ -5,14 +5,15 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Room;
 use App\Models\Hotel;
 use App\Models\Offer;
+use App\Models\Booking;
 use App\Models\Website\Page;
 use Illuminate\Http\Request;
 use App\Models\Website\Slider;
 use Illuminate\Support\Carbon;
 use App\Models\Website\Facility;
 use App\Models\Website\Testimonial;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Models\Booking;
 
 class HomeController extends Controller
 {
@@ -75,14 +76,18 @@ class HomeController extends Controller
 
         $available_rooms = Room::with([
             'bookings' => function ($query) use ($checkin_date, $checkout_date) {
-                $query->whereBetween('checkin_date', [$checkin_date, $checkout_date])
-                      ->orWhereBetween('checkout_date', [$checkin_date, $checkout_date]);
+                $query->where(function ($query) use ($checkin_date, $checkout_date) {
+                    $query->whereBetween('checkin_date', [$checkin_date, $checkout_date])
+                          ->orWhereBetween('checkout_date', [$checkin_date, $checkout_date]);
+                })
+                ->where('booking_status', 1);
             }
         ])
         ->where('max_adults', '>=', (int) $total_adults)
         ->where('max_childs', '>=', (int) $total_childs)
         ->where('is_active', 1)
         ->get();
+
         return view('frontend.available-rooms', compact('available_rooms', 'checkin_date', 'checkout_date', 'total_adults', 'total_childs'));
     }
 
