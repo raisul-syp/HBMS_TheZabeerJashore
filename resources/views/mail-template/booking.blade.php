@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>The Zabeer Dhaka</title>
+    <title>The Zabeer Jashore</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -109,9 +109,9 @@
                       background: #2c2c2c;
                     "
                   >
-                    <a href="https://thezabeerdhaka.com/" target="_blank">
+                    <a href="https://thezabeerjashore.com/" target="_blank">
                       <img
-                        src="https://thezabeerdhaka.com/public/uploads/site/logo-the-zabeer-dhaka.png"
+                        src="https://thezabeerjashore.com/public/uploads/site/logo-the-zabeer-jashore.png"
                         alt="The Zabeer"
                         width="120"
                         style="border: 0; display: inline-block"
@@ -326,9 +326,9 @@
             colspan="2"
             style="margin: 0 auto; padding: 20px 0px 0px 0; border-bottom: 1px solid #dea500; border-top: 3px solid #dea500;"
           >
-            <a href="https://thezabeerdhaka.com/" target="_blank">
+            <a href="https://thezabeerjashore.com/" target="_blank">
               <img
-                src="https://thezabeerdhaka.com/public/uploads/site/logo-the-zabeer-dhaka.png"
+                src="https://thezabeerjashore.com/public/uploads/site/logo-the-zabeer-jashore.png"
                 alt="Zabeer Logo"
                 width="130"
                 style="border: 0; display: block"
@@ -337,18 +337,18 @@
             <div class="contact-info" style="margin: 15px 0">
               <p style="font-size: 12px; color: white; font-weight: 300; margin: 5px 0">
                 Call :
-                <a style="color: white; text-decoration: none" href="tel:(+88) 02224470771-73"
-                  >(+88) 02224470771-73</a
+                <a style="color: white; text-decoration: none" href="tel:+8801885000555"
+                  >(+88) 01885 000 555</a
                 >
               </p>
               <p style="font-size: 12px; color: white; font-weight: 300; margin: 5px 0">
                 Email :
-                <a style="color: white; text-decoration: none" href="mailto:info@thezabeerdhaka.com"
-                  >info@thezabeerdhaka.com</a
+                <a style="color: white; text-decoration: none" href="mailto:info@thezabeerjashore.com"
+                  >info@thezabeerjashore.com</a
                 >
               </p>
               <p style="font-size: 12px; color: white; font-weight: 300; margin: 5px 0">
-                Address : House-1, Road-2, Sector-1, Uttara Model Town, Dhaka-1230
+                Address : 1256, M M Ali Road, Jashore
               </p>
             </div>
           </td>
@@ -359,7 +359,7 @@
           </td>
           <td bgcolor="#2c2c2c" style="margin: 0 auto; padding: 5px 0">
             <div class="social" style="text-align: center">
-              <a href="https://www.facebook.com/thezabeerdhaka" style="display: inline-block; margin: 0 5px"
+              <a href="https://www.facebook.com/zabeerhotel" style="display: inline-block; margin: 0 5px"
                 ><img
                   width="20"
                   src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
@@ -381,7 +381,7 @@
                   alt="Social Icon"
                   style="border: 0; display: block"
               /></a>
-              <a href="https://www.youtube.com/@thezabeerdhaka" style="display: inline-block; margin: 0 5px"
+              <a href="https://www.youtube.com/@zabeerhotelinternational5637" style="display: inline-block; margin: 0 5px"
                 ><img
                   width="20"
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"

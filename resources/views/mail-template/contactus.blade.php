@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>The Zabeer Dhaka</title>
+    <title>The Zabeer Jashore</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -108,9 +108,9 @@
                       background: #2c2c2c;
                     "
                   >
-                    <a href="https://thezabeerdhaka.com/" target="_blank">
+                    <a href="https://thezabeerjashore.com/" target="_blank">
                       <img
-                        src="https://thezabeerdhaka.com/public/uploads/site/logo-the-zabeer-dhaka.png"
+                        src="https://thezabeerjashore.com/public/uploads/site/logo-the-zabeer-jashore.png"
                         alt="The Zabeer"
                         width="120"
                         style="border: 0; display: inline-block"

@@ -32,7 +32,7 @@ class AdminRegisterMailable extends Mailable
     {
         $roles = Role::all()->where('is_active', 1)->where('is_delete', 1);
         $subject = "User Registration";
-        return $this->from('info@thezabeerdhaka.com', 'The Zabeer Dhaka User Registration')
+        return $this->from('info@thezabeerjashore.com', 'The Zabeer Jashore User Registration')
                     ->to($this->data['user_email'])
                     ->subject($subject)
                     ->with($this->data)

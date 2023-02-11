@@ -32,9 +32,9 @@ class BookingMailable extends Mailable
     public function build()
     {
         $subject = "Hotel Reservation";
-        return $this->from('reservation@thezabeerdhaka.com', 'The Zabeer Dhaka Reservation Team')
-                    ->to([$this->data['guest_email'], 'reservation@thezabeerdhaka.com'])
-                    ->cc(['branding@thezabeerdhaka.com', 'fo@thezabeerdhaka.com'])
+        return $this->from('reservation@thezabeerjashore.com', 'The Zabeer Jashore Reservation Team')
+                    ->to([$this->data['guest_email'], 'reservation@thezabeerjashore.com'])
+                    ->cc(['branding@thezabeerjashore.com', 'fo@thezabeerjashore.com'])
                     ->subject($subject)
                     ->with($this->data)
                     ->view('mail-template.booking');

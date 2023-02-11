@@ -30,7 +30,7 @@ class GuestRegisterMailable extends Mailable
     public function build()
     {
         $subject = "Guest Registration";
-        return $this->from('info@thezabeerdhaka.com', 'The Zabeer Dhaka Guest Registration')
+        return $this->from('info@thezabeerjashore.com', 'The Zabeer Jashore Guest Registration')
                     ->to($this->data['guest_email'])
                     ->subject($subject)
                     ->with($this->data)
