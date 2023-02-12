@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2023 at 12:53 PM
+-- Generation Time: Feb 12, 2023 at 11:20 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -105,6 +105,14 @@ CREATE TABLE `hb_bookings` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `hb_bookings`
+--
+
+INSERT INTO `hb_bookings` (`id`, `guest_id`, `room_id`, `staff_id`, `checkin_date`, `checkout_date`, `checkin_time`, `checkout_time`, `total_adults`, `total_childs`, `booking_status`, `is_delete`, `payment_mode`, `booking_comment`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+(6, 1, 1, 1, '2023-02-06', '2023-02-07', '14:00', '12:00', '1', '0', 1, 1, 'Pay on arrival', 'Booking created by Guest', '6', NULL, '2023-02-05 01:24:10', '2023-02-05 01:24:10'),
+(11, 1, 1, 1, '2023-02-06', '2023-02-07', '14:00', '12:00', '1', '0', 1, 1, 'Pay on arrival', 'Booking created by Guest', '6', '1', '2023-02-06 01:30:09', '2023-02-06 01:56:20');
 
 -- --------------------------------------------------------
 
@@ -394,8 +402,8 @@ CREATE TABLE `hb_facilities` (
   `description` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -432,8 +440,8 @@ CREATE TABLE `hb_faqs` (
   `faq_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -471,8 +479,8 @@ CREATE TABLE `hb_halls` (
   `long_description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `logo_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -521,8 +529,8 @@ CREATE TABLE `hb_offers` (
   `end_date` datetime NOT NULL,
   `thumb` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -539,9 +547,9 @@ INSERT INTO `hb_offers` (`id`, `name`, `slug`, `offer_category`, `short_descript
 (1, 'New Year Celebration 2023', 'new-year-celebration-2023', 'Others', 'New Year Celebration 2023. New Year Celebration 2023. New Year Celebration 2023.', '<h4><span style=\"font-weight: bolder;\">New Year Celebration 2023. New Year Celebration 2023. New Year Celebration 2023.</span></h4><h4><span style=\"font-weight: bolder;\"><br></span></h4><p>New Year Celebration 2023. New Year Celebration 2023. New Year Celebration 2023.&nbsp;<span style=\"font-size: 0.875rem;\">New Year Celebration 2023. New Year Celebration 2023. New Year Celebration 2023.&nbsp;</span><span style=\"font-size: 0.875rem;\">New Year Celebration 2023. New Year Celebration 2023. New Year Celebration 2023.&nbsp;</span><span style=\"font-size: 0.875rem;\">New Year Celebration 2023. New Year Celebration 2023. New Year Celebration 2023.&nbsp;</span><span style=\"font-size: 0.875rem;\">New Year Celebration 2023. New Year Celebration 2023. New Year Celebration 2023.</span></p>', '2022-12-31 00:00:02', '2023-01-10 00:00:02', 'new-year-celebration-2023.jpg', 'New Year Celebration 2023', 'New Year Celebration 2023', 'New Year Celebration 2023', 1, 1, '1', '0', '2022-12-26 04:54:14', '2023-01-16 01:46:47'),
 (2, 'Valentine\'s Day Celebration 2023', 'valentines-day-celebration-2023', 'Others', 'Valentine\'s Day Celebration 2023. Valentine\'s Day Celebration 2023. Valentine\'s Day Celebration 2023.', '<h4>Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.</h4><p>Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;<span style=\"font-size: 0.875rem;\">Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;</span><span style=\"font-size: 0.875rem;\">Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;</span><span style=\"font-size: 0.875rem;\">Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;</span><span style=\"font-size: 0.875rem;\">Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;</span><span style=\"font-size: 0.875rem;\">Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;</span><span style=\"font-size: 0.875rem;\">Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;Valentine\'s Day Celebration 2023.&nbsp;</span></p>', '2023-02-13 11:59:17', '2023-02-14 23:59:17', 'valentines-day-celebration-2023.png', 'Valentine\'s Day Celebration 2023', 'Valentine\'s Day Celebration 2023', 'Valentine\'s Day Celebration 2023', 1, 1, '1', '0', '2022-12-26 05:02:19', '2023-01-16 01:47:02'),
 (3, 'Grand Opening', 'grand-opening', 'Others', 'Grand Opening', '<p>Grand Opening<br></p>', '2023-01-02 00:00:30', '2023-01-02 23:59:30', 'grand-opening.jpg', 'Grand Opening', 'Grand Opening', 'Grand Opening', 1, 1, '1', '0', '2023-01-01 01:56:32', '2023-01-16 01:47:17'),
-(4, 'Buffet Dinner', 'buffet-dinner', 'Restaurant', 'Buffet Dinner', '<p>Buffet Dinner<br></p>', '2023-01-01 09:00:42', '2023-03-31 09:00:42', 'buffet-dinner.png', 'Buffet Dinner', 'Buffet Dinner', 'Buffet Dinner', 1, 1, '1', '1', '2023-01-09 03:01:49', '2023-02-02 04:10:50'),
-(5, 'Coffee Time', 'coffee-time', 'Restaurant', 'Coffee Time', '<p>Coffee Time<br></p>', '2023-01-01 09:05:52', '2023-03-31 09:05:52', 'coffee-time.png', 'Coffee Time', 'Coffee Time', 'Coffee Time', 1, 1, '1', '1', '2023-01-09 03:06:23', '2023-02-02 04:11:08'),
-(6, 'Deluxe 50% Discount', 'deluxe-50-discount', 'Room', 'Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.', '<p>Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.&nbsp;Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.&nbsp;Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.&nbsp;Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.&nbsp;<br></p>', '2023-01-01 09:37:10', '2023-03-31 09:37:10', 'deluxe-50-discount.png', 'Deluxe 50% Discount', 'Deluxe 50% Discount', 'Deluxe 50% Discount', 1, 1, '0', '1', '2023-01-16 03:39:12', '2023-02-02 04:58:10'),
+(4, 'Buffet Dinner', 'buffet-dinner', 'Restaurant', 'Buffet Dinner', '<p>Buffet Dinner<br></p>', '2023-01-01 09:00:42', '2023-03-31 09:00:42', 'buffet-dinner.png', 'Buffet Dinner', 'Buffet Dinner', 'Buffet Dinner', 1, 1, '1', '1', '2023-01-09 03:01:49', '2023-02-04 05:30:51'),
+(5, 'Valentine\'s Special Offer', 'valentines-special-offer', 'Restaurant', 'Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer.', '<p>Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer.&nbsp;Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer.&nbsp;Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer.&nbsp;Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer. Valentine\'s Special Offer.<br></p>', '2023-01-01 09:05:52', '2023-03-31 09:05:52', 'valentines-special-offer.png', 'Valentine\'s Special Offer', 'Valentine\'s Special Offer', 'Valentine\'s Special Offer', 1, 1, '1', '1', '2023-01-09 03:06:23', '2023-02-07 02:01:05'),
+(6, 'Deluxe 50% Discount', 'deluxe-50-discount', 'Room', 'Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.', '<p>Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.&nbsp;Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.&nbsp;Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.&nbsp;Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount. Deluxe 50% Discount.&nbsp;<br></p>', '2023-01-01 09:37:10', '2023-03-31 09:37:10', 'deluxe-50-discount.png', 'Deluxe 50% Discount', 'Deluxe room discount, Hotel room discount, The Zabeer Jashore hotel, Jashore hotel, 50% discount, Room sale, Room special offer, Deluxe room package, Deluxe room deal, Deluxe room booking, Deluxe room reservation, Hotel deal, Hotel booking, Hotel reservation', 'Book your stay at The Zabeer Jashore hotel in Jashore and enjoy 50% off on our Deluxe Rooms. Hurry and take advantage of this limited time offer while it lasts. Relax in style and comfort in our spacious and luxurious rooms.', 1, 1, '0', '1', '2023-01-16 03:39:12', '2023-02-12 00:54:50'),
 (7, 'Delux Twin 50% Discount', 'delux-twin-50-discount', 'Room', 'Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount.', '<p>Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount.Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount.Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount.Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount. Delux Twin 50% Discount.<br></p>', '2023-01-01 09:39:25', '2023-03-31 09:39:25', 'delux-twin-50-discount.png', 'Delux Twin 50% Discount', 'Delux Twin 50% Discount', 'Delux Twin 50% Discount', 1, 1, '0', '1', '2023-01-16 03:40:23', '2023-02-02 04:59:21');
 
 -- --------------------------------------------------------
@@ -555,8 +563,8 @@ CREATE TABLE `hb_offer_categories` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -590,8 +598,8 @@ CREATE TABLE `hb_restaurents` (
   `long_description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `logo_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -624,6 +632,21 @@ CREATE TABLE `hb_restaurent_images` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `hb_restaurent_images`
+--
+
+INSERT INTO `hb_restaurent_images` (`id`, `restaurent_id`, `image`, `created_at`, `updated_at`) VALUES
+(1, 1, 'uploads/restaurents/cafe-24-1675754397-1.png', '2023-02-07 01:19:57', '2023-02-07 01:19:57'),
+(2, 2, 'uploads/restaurents/taste-of-heaven-1675754438-1.png', '2023-02-07 01:20:38', '2023-02-07 01:20:38'),
+(3, 3, 'uploads/restaurents/sky-line-1675754601-1.png', '2023-02-07 01:23:21', '2023-02-07 01:23:21'),
+(4, 3, 'uploads/restaurents/sky-line-1675754618-1.png', '2023-02-07 01:23:38', '2023-02-07 01:23:38'),
+(5, 3, 'uploads/restaurents/sky-line-1675754618-2.png', '2023-02-07 01:23:38', '2023-02-07 01:23:38'),
+(6, 4, 'uploads/restaurents/noxx-bar-1675754674-1.png', '2023-02-07 01:24:34', '2023-02-07 01:24:34'),
+(7, 4, 'uploads/restaurents/noxx-bar-1675754674-2.png', '2023-02-07 01:24:34', '2023-02-07 01:24:34'),
+(8, 4, 'uploads/restaurents/noxx-bar-1675754674-3.png', '2023-02-07 01:24:34', '2023-02-07 01:24:34'),
+(9, 4, 'uploads/restaurents/noxx-bar-1675754674-4.png', '2023-02-07 01:24:34', '2023-02-07 01:24:34');
+
 -- --------------------------------------------------------
 
 --
@@ -643,8 +666,8 @@ CREATE TABLE `hb_rooms` (
   `discount_rate` int(11) NOT NULL DEFAULT 0,
   `discount_price` float(8,2) NOT NULL DEFAULT 0.00,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `has_discount` tinyint(4) NOT NULL DEFAULT 0 COMMENT '0=No, 1=Yes',
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
@@ -659,7 +682,7 @@ CREATE TABLE `hb_rooms` (
 --
 
 INSERT INTO `hb_rooms` (`id`, `name`, `slug`, `short_description`, `long_description`, `max_adults`, `max_childs`, `quantity`, `price`, `discount_rate`, `discount_price`, `meta_title`, `meta_keyword`, `meta_decription`, `has_discount`, `is_active`, `is_delete`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, 'Deluxe', 'deluxe', 'Approximate room size:320 Sqft premium Rooms are larger than Deluxe Rooms and offer one king size or two twin size beds to suit your needs .Sink into one of two sofa chairs, and enjoy air conditioning plush bathrobes and free high speed wireless internet .', '<p>Experience the ultimate in luxury and comfort in our Delux Rooms. Our spacious and stylish guest rooms feature a range of top-of-the-line amenities to help you relax and unwind during your stay. Each room features a comfortable king-sized bed with plush bedding, a flat-screen TV with cable channels, and a private bathroom with a shower and bathtub. Book now and indulge in the ultimate in comfort and style in our Delux Rooms.<br></p>', 2, 0, 10, 220.00, 0, 0.00, 'Deluxe', 'Deluxe', 'Deluxe', 0, 1, 1, '1', '1', '2022-12-26 05:16:35', '2023-02-01 02:13:44'),
+(1, 'Deluxe', 'deluxe', 'Approximate room size:320 Sqft premium Rooms are larger than Deluxe Rooms and offer one king size or two twin size beds to suit your needs .Sink into one of two sofa chairs, and enjoy air conditioning plush bathrobes and free high speed wireless internet .', '<p>Experience the ultimate in luxury and comfort in our Delux Rooms. Our spacious and stylish guest rooms feature a range of top-of-the-line amenities to help you relax and unwind during your stay. Each room features a comfortable king-sized bed with plush bedding, a flat-screen TV with cable channels, and a private bathroom with a shower and bathtub. Book now and indulge in the ultimate in comfort and style in our Delux Rooms.<br></p>', 2, 0, 2, 220.00, 0, 0.00, 'Deluxe', 'Deluxe', 'Deluxe', 0, 1, 1, '1', '1', '2022-12-26 05:16:35', '2023-02-05 00:34:54'),
 (2, 'Delux Twin', 'delux-twin', 'Approximate room size: 320 Sqft premium Rooms are larger than Delux Twin Rooms and offer one king size or two twin size beds to suit your needs .Sink into one of two sofa chairs, and enjoy air conditioning plush bathrobes and free high speed wireless internet .', '<p>Step up to the ultimate in luxury and indulgence in our Delux Twin Rooms. Our spacious and elegantly appointed guest rooms offer the ultimate in comfort and style. Each room features a plush king-sized bed with high-quality bedding, a flat-screen TV with premium cable channels, and a private bathroom with a spa-like shower and bathtub. In addition, guests in our Delux Twin Rooms have access to exclusive amenities. Book now and experience the ultimate in luxury in our Delux Twin Rooms&nbsp;<br></p>', 2, 0, 10, 240.00, 0, 0.00, 'Delux Twin', 'Delux Twin', 'Delux Twin', 0, 1, 1, '0', '1', '2022-12-14 18:45:59', '2023-02-02 01:17:22'),
 (3, 'Premium', 'premium', 'Approximate room size:320 Sqft Premium Rooms are larger than Premium Rooms and offer one king size or two twin size beds to suit your needs .Sink into one of two sofa chairs, and enjoy air conditioning plush bathrobes and free high speed wireless internet .', '<p>Experience the ultimate in luxury and comfort in our Premium Rooms. Our spacious and elegantly appointed guest rooms offer a range of top-of-the-line amenities to help you relax and unwind during your stay. Each room features a plush king-sized bed with high-quality bedding, a flat-screen TV with premium cable channels, and a private bathroom with a spa-like shower and bathtub. In addition, guests in our Premium Rooms have access to exclusive amenities and a private balcony or terrace with stunning views of the surrounding area. Book now and indulge in the ultimate in luxury and comfort in our Premium Rooms&nbsp;<br></p>', 2, 0, 10, 260.00, 0, 0.00, 'Premium', 'Premium', 'Premium', 0, 1, 1, '0', '1', '2022-12-14 18:47:55', '2023-02-02 01:18:31'),
 (4, 'Premium Twin', 'premium-twin', 'Approximate room size:320 Sqft Premium Twin Rooms are larger than Premium Twin Rooms and offer one king size or two twin size beds to suit your needs .Sink into one of two sofa chairs, and enjoy air conditioning plush bathrobes and free high speed wireless internet .', '<p><font color=\"#212529\" face=\"Nunito Sans, sans-serif\">Experience the ultimate in luxury and comfort in our Premium Twin&nbsp;Rooms. Our spacious and elegantly appointed guest rooms offer a range of top-of-the-line amenities to help you relax and unwind during your stay. Each room features two comfortable twin-sized beds with high-quality bedding, a flat-screen TV with premium cable channels, and a private bathroom with a spa-like shower and bathtub. In addition, guests in our Premium Twin&nbsp;Rooms have access to exclusive amenities and a private balcony or terrace with stunning views of the surrounding area. Book now and indulge in the ultimate in luxury and comfort in our Premium Twin&nbsp;Rooms</font><br></p>', 2, 0, 10, 280.00, 10, 252.00, 'Premium Twin', 'Premium Twin', 'Premium Twin', 0, 1, 1, '0', '1', '2022-12-14 18:49:23', '2023-02-02 01:19:19'),
@@ -678,8 +701,8 @@ CREATE TABLE `hb_roomtype` (
   `description` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -804,8 +827,8 @@ INSERT INTO `hb_room_images` (`id`, `room_id`, `image`, `created_at`, `updated_a
 (4, 3, 'uploads/rooms/premium-1675322903-1.jpg', '2023-02-02 01:28:23', '2023-02-02 01:28:23'),
 (5, 4, 'uploads/rooms/premium-twin-1675322967-1.jpg', '2023-02-02 01:29:27', '2023-02-02 01:29:27'),
 (6, 4, 'uploads/rooms/premium-twin-1675322967-2.jpg', '2023-02-02 01:29:27', '2023-02-02 01:29:27'),
-(7, 10, 'uploads/rooms/suite-1675323012-1.jpg', '2023-02-02 01:30:12', '2023-02-02 01:30:12'),
-(8, 10, 'uploads/rooms/suite-1675323012-2.jpg', '2023-02-02 01:30:12', '2023-02-02 01:30:12');
+(7, 10, 'uploads/rooms/suite-1675678150-1.jpg', '2023-02-06 04:09:10', '2023-02-06 04:09:10'),
+(8, 10, 'uploads/rooms/suite-1675678150-2.jpg', '2023-02-06 04:09:10', '2023-02-06 04:09:10');
 
 -- --------------------------------------------------------
 
@@ -827,8 +850,8 @@ CREATE TABLE `hb_settings` (
   `social_yt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `display_order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -842,7 +865,7 @@ CREATE TABLE `hb_settings` (
 --
 
 INSERT INTO `hb_settings` (`id`, `name`, `phone`, `email`, `address`, `logo`, `icon`, `social_fb`, `social_tw`, `social_insta`, `social_yt`, `display_order`, `meta_title`, `meta_keyword`, `meta_decription`, `is_active`, `is_delete`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, 'The Zabeer Jashore', '(+88) 01885 000 555', 'info@thezabeerjashore.com', '1256, M M Ali Road, Jashore', 'logo-the-zabeer-jashore.png', 'icon-the-zabeer-jashore.png', 'https://www.facebook.com/zabeerhotel', 'https://twitter.com/', 'https://www.instagram.com/', 'https://www.youtube.com/@zabeerhotelinternational5637', '1', 'The Zabeer Jashore', 'The Zabeer Jashore', 'The Zabeer Jashore', 1, 1, '1', '1', '2022-12-26 00:35:03', '2023-02-02 03:35:17');
+(1, 'The Zabeer Jashore', '(+88) 01885 000 555', 'info@thezabeerjashore.com', '1256, M M Ali Road, Jashore', 'logo-the-zabeer-jashore.png', 'icon-the-zabeer-jashore.png', 'https://www.facebook.com/zabeerhotel', 'https://twitter.com/', 'https://www.instagram.com/', 'https://www.youtube.com/@zabeerhotelinternational5637', '1', 'The Zabeer Jashore', 'The Zabeer Jashore, Hotel in Jashore, Accommodation in Jashore, Lodging in Jashore, Jashore resort, Vacation rental in Jashore, Jashore bed and breakfast, Inn in Jashore, Guesthouse in Jashore, Motel in Jashore, Jashore vacation, Jashore travel, Getaway in Jashore, Luxury hotel in Jashore, Boutique hotel in Jashore, Budget hotel in Jashore, Family-friendly hotel in Jashore, Pet-friendly hotel in Jashore, Business hotel in Jashore, Conference center in Jashore, Meeting facilities in Jashore, Event space in Jashore, Spa in Jashore, Pool in Jashore, Restaurant in Jashore, Gym in Jashore, Free Wi-Fi in Jashore, Parking in Jashore, Jashore location, Jashore destination, Jashore attractions, Jashore tourist spots', 'The Zabeer Jashore is a luxurious and elegant hotel located in the heart of Jashore. Offering a variety of comfortable rooms, top-notch amenities, and exceptional service, we are the perfect choice for your next getaway. Book your stay today!', 1, 1, '1', '1', '2022-12-26 00:35:03', '2023-02-12 00:06:39');
 
 -- --------------------------------------------------------
 
@@ -863,8 +886,8 @@ CREATE TABLE `hb_webcontactinfos` (
   `email_reservation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `display_order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -895,8 +918,8 @@ CREATE TABLE `hb_webfacilities` (
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `display_order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -931,8 +954,8 @@ CREATE TABLE `hb_webnavs` (
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `display_order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -971,8 +994,8 @@ CREATE TABLE `hb_webpages` (
   `display_order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `footer_item` tinyint(4) NOT NULL DEFAULT 0 COMMENT '0=No, 1=Yes',
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
@@ -987,9 +1010,9 @@ CREATE TABLE `hb_webpages` (
 --
 
 INSERT INTO `hb_webpages` (`id`, `name`, `title`, `sub_title`, `short_description`, `long_description`, `slug`, `display_order`, `image`, `meta_title`, `meta_keyword`, `meta_decription`, `footer_item`, `is_active`, `is_delete`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, 'About Us', 'A place that sparks creativity, fuels the imagination and welcomes reflection and relaxation.', 'The Zabeer Jashore', 'We Offer 5-Star Banquet Spaces, Complete With Catering And Event Management Facilities. Discover The International Favorites Grilled To Perfection In The Live Kitchen. Experiment With Choicest Of Accompaniments And Sauces.The Hotel Has 3 Dedicated Conference And Event Venues Has The Capacity For 200 Delegates.', '<p><span style=\"color: rgb(33, 37, 41); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 16px; text-align: justify;\">We Offer 5-Star Banquet Spaces, Complete With Catering And Event Management Facilities. Discover The International Favorites Grilled To Perfection In The Live Kitchen. Experiment With Choicest Of Accompaniments And Sauces.The Hotel Has 3 Dedicated Conference And Event Venues Has The Capacity For 200 Delegates. Each Equipped With The Very Latest Audio-Visual And Lighting Technology.The Ambience And Therapies At Our International Spa Offered By Experienced Professionals Ensure That You Are Rejuvenated.State Of The Art Gymnasium And With An Exercise Studio.Haircare And Beauty Treatments By Trained Stylists.The Elegant Att-Day Three Restaurant Provides A Stunning Atmosphere In Which To Sample Europian,Asian,Thai, Chinese Arabic And Our Own Local Cuisine.</span><br></p>', 'about-us', '1', 'about-us.png', 'About Us', 'About Us', 'About Us', 1, 1, 1, '1', '1', '2022-12-26 00:47:16', '2023-02-02 01:35:11'),
-(2, 'Contact Us', 'Contact Us', 'Contact Us', 'Contact Us', '<p>Contact Us<br></p>', 'contact-us', '2', NULL, 'Contact Us', 'Contact Us', 'Contact Us', 1, 1, 1, '1', '0', '2022-12-26 00:49:07', '2023-01-15 23:52:02'),
-(3, 'Offers', 'Offers', 'Offers', 'Offers', '<p>Offers<br></p>', 'offers', '3', NULL, 'Offers', 'Offers', 'Offers', 1, 1, 1, '0', '0', NULL, '2022-12-16 18:39:55'),
+(1, 'About Us', 'A place that sparks creativity, fuels the imagination and welcomes reflection and relaxation.', 'The Zabeer Jashore', 'We Offer 5-Star Banquet Spaces, Complete With Catering And Event Management Facilities. Discover The International Favorites Grilled To Perfection In The Live Kitchen. Experiment With Choicest Of Accompaniments And Sauces.The Hotel Has 3 Dedicated Conference And Event Venues Has The Capacity For 200 Delegates.', '<p><span style=\"color: rgb(33, 37, 41); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 16px; text-align: justify;\">We Offer 5-Star Banquet Spaces, Complete With Catering And Event Management Facilities. Discover The International Favorites Grilled To Perfection In The Live Kitchen. Experiment With Choicest Of Accompaniments And Sauces.The Hotel Has 3 Dedicated Conference And Event Venues Has The Capacity For 200 Delegates. Each Equipped With The Very Latest Audio-Visual And Lighting Technology.The Ambience And Therapies At Our International Spa Offered By Experienced Professionals Ensure That You Are Rejuvenated.State Of The Art Gymnasium And With An Exercise Studio.Haircare And Beauty Treatments By Trained Stylists.The Elegant Att-Day Three Restaurant Provides A Stunning Atmosphere In Which To Sample Europian,Asian,Thai, Chinese Arabic And Our Own Local Cuisine.</span><br></p>', 'about-us', '1', 'about-us.png', 'About Us', 'About us, Hotel information, The Zabeer Jashore hotel, Jashore hotel, Hotel history, Hotel philosophy, Hotel values, Hotel mission, Hotel vision, Hotel team, Hotel management, Hotel owners, Hotel staff, Hotel culture, Hotel community, Hotel sustainability, Hotel commitment, Hotel awards, Hotel recognition', 'Discover the history, philosophy, and values of The Zabeer Jashore hotel in Jashore. Learn about our commitment to providing exceptional service, sustainability, and community involvement. Get to know our talented team and find out why we are a leading hotel in the area.', 1, 1, 1, '1', '1', '2022-12-26 00:47:16', '2023-02-12 00:16:11'),
+(2, 'Contact Us', 'Contact Us', 'Contact Us', 'Contact Us', '<p>Contact Us<br></p>', 'contact-us', '2', NULL, 'Contact Us', 'Contact us, Hotel contact, The Zabeer Jashore hotel, Jashore hotel, Hotel address, Hotel phone number, Hotel email, Hotel location, Hotel map, Hotel directions, Hotel booking, Hotel reservation, Hotel inquiry, Hotel feedback, Hotel support, Hotel assistance', 'Get in touch with The Zabeer Jashore hotel in Jashore. Find our address, phone number, and email, and use our map and directions to easily find us. Book your stay or ask any questions using our online contact form. We are here to assist you with any inquiries or feedback.', 1, 1, 1, '1', '1', '2022-12-26 00:49:07', '2023-02-12 00:47:34'),
+(3, 'Offers', 'Offers', 'Offers', 'Offers', '<p>Offers<br></p>', 'offers', '3', NULL, 'Offers', 'Hotel offers, Hotel deals, Hotel packages, The Zabeer Jashore hotel, Jashore hotel, Hotel discount, Hotel special offer, Hotel promotion, Hotel rate, Hotel upgrade, Hotel amenity, Hotel package deal, Hotel booking, Hotel reservation', 'Take advantage of exclusive offers and packages at The Zabeer Jashore hotel in Jashore. From romantic getaways to family vacations, we have something for everyone. Book your stay now and enjoy discounted rates, free upgrades, and special amenities.', 1, 1, 1, '0', '1', NULL, '2023-02-12 00:50:35'),
 (4, 'FAQ', 'FAQ', 'FAQ', 'FAQ', '<p>FAQ<br></p>', 'faq', '4', NULL, 'FAQ', 'FAQ', 'FAQ', 1, 1, 1, '0', '1', NULL, '2023-01-08 14:40:23'),
 (5, 'Rooms', 'Rooms', 'Rooms', 'Rooms', '<p>Rooms<br></p>', 'rooms', '5', NULL, 'Rooms', 'Rooms', 'Rooms', 1, 1, 1, '0', '0', NULL, '2022-12-16 18:41:12'),
 (6, 'Restaurants', 'Restaurants', 'Restaurants', 'Restaurants', '<p>Restaurants<br></p>', 'restaurants', '6', NULL, 'Restaurants', 'Restaurants', 'Restaurants', 1, 1, 1, '0', '0', NULL, '2022-12-16 18:41:27'),
@@ -1019,8 +1042,8 @@ CREATE TABLE `hb_websliders` (
   `content_5` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `display_order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1052,8 +1075,8 @@ CREATE TABLE `hb_webtestimonials` (
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `display_order` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1085,8 +1108,8 @@ CREATE TABLE `hb_wellness` (
   `long_description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `logo_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_decription` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_decription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Deactive, 1=Active',
   `is_delete` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Delete, 1=Not Delete',
   `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1101,7 +1124,7 @@ CREATE TABLE `hb_wellness` (
 
 INSERT INTO `hb_wellness` (`id`, `name`, `slug`, `short_description`, `long_description`, `logo_image`, `meta_title`, `meta_keyword`, `meta_decription`, `is_active`, `is_delete`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 (1, 'Spa', 'spa', 'Spa', '<p>Spa<br></p>', 'spa.png', 'Spa', 'Spa', 'Spa', 1, 1, '0', '0', '2022-12-13 23:35:12', '2023-01-10 13:44:44'),
-(2, 'Gym', 'gym', 'Gym', '<p>Gym<br></p>', 'gym.png', 'Gym', 'Gym', 'Gym', 1, 1, '0', '0', '2022-12-13 23:35:51', '2023-01-10 13:44:59'),
+(2, 'Gym', 'gym', 'Gym', '<p>Gym<br></p>', 'gym.png', 'Gym', 'Gym', 'Gym', 1, 1, '0', '1', '2022-12-13 23:35:51', '2023-02-07 01:26:35'),
 (3, 'Saloon', 'saloon', 'Saloon', '<p>Saloon<br></p>', 'saloon.png', 'Saloon', 'Saloon', 'Saloon', 1, 1, '0', '1', '2022-12-13 23:36:38', '2023-02-02 01:14:00'),
 (4, 'Swimming Pool', 'swimming-pool', 'Swimming Pool', '<p>Swimming Pool<br></p>', 'swimming-pool.png', 'Swimming Pool', 'Swimming Pool', 'Swimming Pool', 1, 1, '0', '1', '2022-12-13 23:37:31', '2023-02-02 01:14:11');
 
@@ -1118,6 +1141,16 @@ CREATE TABLE `hb_wellness_images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `hb_wellness_images`
+--
+
+INSERT INTO `hb_wellness_images` (`id`, `wellness_id`, `image`, `created_at`, `updated_at`) VALUES
+(1, 4, 'uploads/wellness/swimming-pool-1675754771-1.png', '2023-02-07 01:26:11', '2023-02-07 01:26:11'),
+(2, 2, 'uploads/wellness/gym-1675754795-1.png', '2023-02-07 01:26:35', '2023-02-07 01:26:35'),
+(3, 2, 'uploads/wellness/gym-1675754795-2.png', '2023-02-07 01:26:35', '2023-02-07 01:26:35'),
+(4, 2, 'uploads/wellness/gym-1675754795-3.png', '2023-02-07 01:26:35', '2023-02-07 01:26:35');
 
 -- --------------------------------------------------------
 
@@ -1885,7 +1918,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `hb_bookings`
 --
 ALTER TABLE `hb_bookings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `hb_country`
@@ -1939,7 +1972,7 @@ ALTER TABLE `hb_restaurents`
 -- AUTO_INCREMENT for table `hb_restaurent_images`
 --
 ALTER TABLE `hb_restaurent_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `hb_rooms`
@@ -2023,7 +2056,7 @@ ALTER TABLE `hb_wellness`
 -- AUTO_INCREMENT for table `hb_wellness_images`
 --
 ALTER TABLE `hb_wellness_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `migrations`

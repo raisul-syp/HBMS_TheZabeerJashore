@@ -14,7 +14,7 @@
     @if (!empty($settings->icon))
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('uploads/site/'.$settings->icon) }}">
     @else
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('uploads/site/icon-the-zabeer-dhaka.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('uploads/site/icon-the-zabeer-jashore.png') }}">
     @endif
 
     <!-- Stylesheet -->

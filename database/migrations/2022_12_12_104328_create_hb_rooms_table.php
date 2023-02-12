@@ -27,8 +27,8 @@ class CreateHbRoomsTable extends Migration
             $table->float('discount_price')->default('0.00');
 
             $table->string('meta_title');
-            $table->string('meta_keyword');
-            $table->mediumText('meta_decription')->nullable();
+            $table->longText('meta_keyword');
+            $table->longText('meta_decription')->nullable();
 
             $table->tinyInteger('has_discount')->default('0')->comment('0=No, 1=Yes');
             $table->tinyInteger('is_active')->default('1')->comment('0=Deactive, 1=Active');

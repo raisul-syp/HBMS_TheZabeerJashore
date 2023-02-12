@@ -2,26 +2,28 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Settings;
 use App\Models\Room;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use App\Mail\BookingMailable;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\BookingFormRequest;
-use App\Mail\BookingMailable;
 
 class BookingController extends Controller
 {
     public function index()
     {
+        $settings = Settings::all()->where('is_active','1')->where('is_delete','1');
         $todayDate = Carbon::today()->format('Y-m-d');
         $tomorrowDate = Carbon::tomorrow()->format('Y-m-d');
-        return view('frontend.booking', compact('todayDate','tomorrowDate'));
+        return view('frontend.booking', compact('settings','todayDate','tomorrowDate'));
     }
 
     public function store(BookingFormRequest $request)
